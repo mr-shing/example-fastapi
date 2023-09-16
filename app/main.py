@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from . import models
-from .routers import user, post, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
+
+from .routers import user, post, auth, vote
 
 # Auto Generate tables from models, but I have alembic installed now
 # models.Base.metadata.create_all(bind=engine)
@@ -23,4 +23,4 @@ app.include_router(vote.router)
 
 @app.get('/')
 def root():
-    return {"Message": "Say Hello to Python World Alireza !!!"}
+    return {"Message": "Hello World"}
